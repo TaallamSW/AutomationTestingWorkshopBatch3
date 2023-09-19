@@ -11,7 +11,6 @@ public class HomePage extends BasePage{
     public HomePage(WebDriver driver) {
         super(driver);
     }
-
     public void enterTextInSearchBox(String text)
     {
         driver.findElement(searchTextBox).sendKeys(text);

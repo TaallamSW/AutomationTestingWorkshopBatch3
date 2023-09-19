@@ -6,9 +6,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.asserts.SoftAssert;
 
 public class BaseTest {
     WebDriver driver;
+    SoftAssert softAssert;
     @BeforeClass
     public void setUp()
     {
