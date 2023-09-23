@@ -8,9 +8,11 @@ Feature: Login functionality
     Then  user is Logged in Successfully
     When  Click on Logout Button
 
-  Scenario: In Valid login
+  Scenario Outline: In Valid login
     Given Navigate to login page
-    When  Enter email "tesjfuagasuyg@gmail.com"
-    And   Enter password "Tesfg@124"
+    When  Enter email <username>
+    And   Enter password <password>
     And   Click on Login Button
-    Then  Error message will appear with text "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found"
+    Then  Error message will appear with text <Message>
+    Examples:
+      |username  | password| Message|

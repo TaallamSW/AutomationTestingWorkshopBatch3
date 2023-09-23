@@ -4,10 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import pages.HomePage;
 import pages.LoginPage;
@@ -18,12 +15,7 @@ HomePage homePage;
 LoginPage loginPage;
     @Given("Navigate to login page")
     public void navigateToLoginPage() {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--incognito");
-        driver = new ChromeDriver(chromeOptions);
-        driver.get("https://demo.nopcommerce.com/");
-        driver.manage().window().maximize();
+        driver = LoginRunner.driver;
         homePage = new HomePage(driver);
         homePage.clickOnLoginBtn();
         loginPage = new LoginPage(driver);
