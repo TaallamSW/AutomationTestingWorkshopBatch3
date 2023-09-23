@@ -10,7 +10,7 @@ public class LoginTestsUsingDataProvider extends BaseTest
 {
     HomePage homePage;
     LoginPage loginpage;
-    @Test(dataProvider = "myData")
+    @Test(dataProvider = "dataForLogin")
     public void login(String email, String password,String expectedResult) {
         softAssert = new SoftAssert();
         homePage = new HomePage(driver);
@@ -30,7 +30,7 @@ public class LoginTestsUsingDataProvider extends BaseTest
         }
     }
     @DataProvider
-    public Object[][] myData()
+    public Object[][] dataForLogin()
     {
         Object[][] data=new Object[3][3];
         data [0][0]="Test1@gmail.com";
